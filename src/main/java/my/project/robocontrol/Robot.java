@@ -25,21 +25,27 @@ enum POSITION
 	}
 }
 public class Robot {
-private POSITION position;	
+protected POSITION position;	
+
 	public void Robot()
 	{
+		
 	 //constructor	
 	}
-	public void place(POSITION pos, int x, int y)
+	
+	//While placing the robot, command initiator should check whether they are placing the robot on the table or not. Robot will not check this.
+		public void place(POSITION pos, int x, int y)
 	{
 		position = pos;
 		position.setXY(x, y);
-		
+	
 	}
+
 	public void move()
 	{
 		//to be written
 	}
+	
 	public void turnRight()
 	{
 		//to be written

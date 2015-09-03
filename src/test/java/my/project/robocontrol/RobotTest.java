@@ -29,5 +29,12 @@ public class RobotTest {
 	  assertEquals("0,0 NORTH", robot.report());
 	}
 	
+	@Test
+	public void testToTurnRobotFacingNorthAndThenTurnRight() {
+	  POSITION pos = POSITION.valueOf("NORTH");
+	  robot.place(pos, 0, 0);
+	  robot.turnRight();
+	  assertEquals("0,0 EAST", robot.report());
+	}
 
 }
