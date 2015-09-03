@@ -34,6 +34,10 @@ public class Table {
 		  breadth = y;
 		}
 	}
+	public boolean isOnTable(int x, int y)
+	{
+		return false;
+	}
 	public int getWidth(){
 		return width;
 	}

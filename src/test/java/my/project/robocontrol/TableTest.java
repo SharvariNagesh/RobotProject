@@ -90,4 +90,12 @@ public class TableTest {
 		table.setSize(x, y);
 		assertEquals(oldY, table.getBreadth());
 	}
+	
+	@Test
+	public void testTocheckIfASetOfCoordinatesIsOnTheTable(){
+		table.setSize(10, 10);
+		assertTrue(table.isOnTable(5, 5));
+	}
+	
+	
 }
