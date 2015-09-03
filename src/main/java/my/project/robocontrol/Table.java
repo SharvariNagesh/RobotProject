@@ -36,7 +36,7 @@ public class Table {
 	}
 	public boolean isOnTable(int x, int y)
 	{
-		   return (x<= width && y<=breadth)?  true :  false;
+		   return ((x<= width && x>=0) &&( y<=breadth && y>=0))?  true :  false;
 	}
 	public int getWidth(){
 		return width;

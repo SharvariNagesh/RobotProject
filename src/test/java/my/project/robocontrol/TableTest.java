@@ -108,4 +108,27 @@ public class TableTest {
 		table.setSize(10, 10);
 		assertFalse(table.isOnTable(-3, -10));
 	}
+	
+	@Test
+	public void testToCheckIfYCoordinate0IsOnTheTable(){
+		table.setSize(10, 10);
+		assertTrue(table.isOnTable(3, 0));
+	}
+	
+	@Test
+	public void testToCheckIfBothCoordinate0IsOnTheTable(){
+		table.setSize(10, 10);
+		assertTrue(table.isOnTable(0, 0));
+	}
+	@Test
+	public void testToCheckIfXCoordinate0IsOnTheTable(){
+		table.setSize(10, 10);
+		assertTrue(table.isOnTable(0, 10));
+	}
+	
+	@Test
+	public void testToCheckIfXYCoordinateMaxIsOnTheTable(){
+		table.setSize(10, 10);
+		assertTrue(table.isOnTable(10, 10));
+	}
 }
