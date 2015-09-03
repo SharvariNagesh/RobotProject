@@ -39,4 +39,18 @@ public class TableTest {
 		table.setSize(10, 10);
 		assertEquals(10, table.getWidth());
 	}
+	
+	@Test
+	public void testToSetTableWidthWithANegetiveValueTableClassShouldIgnoreTheNegetiveValue() {
+		int x = table.getWidth();
+		table.setSize(-10, 10);
+		assertEquals(x, table.getWidth());
+	}
+	
+	@Test
+	public void testToSetTableBreadthWithANegetiveValueTableClassShouldIgnoreTheNegetiveValue() {
+		int y = table.getBreadth();
+		table.setSize(10, -10);
+		assertEquals(y, table.getBreadth());
+	}
 }
