@@ -28,7 +28,8 @@ public class Table {
 	 
 	}
 	public void setSize(int x, int y){
-		
+		width = x;
+		breadth = y;
 	}
 	public int getWidth(){
 		return width;
