@@ -97,5 +97,9 @@ public class TableTest {
 		assertTrue(table.isOnTable(5, 5));
 	}
 	
-	
+	@Test
+	public void testTocheckIfASetOfCoordinatesIsNotOnTheTable(){
+		table.setSize(10, 10);
+		assertFalse(table.isOnTable(15, 15));
+	}
 }
