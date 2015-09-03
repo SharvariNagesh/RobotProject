@@ -26,7 +26,7 @@ public class RobotTest {
 	public void testToCreateARobotAndPlaceIt() {
 	  POSITION pos = POSITION.valueOf("NORTH");
 	  robot.place(pos, 0, 0);
-	  assertEquals("0,0,NORTH", robot.report());
+	  assertEquals("0,0 NORTH", robot.report());
 	}
 	
 
