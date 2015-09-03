@@ -102,4 +102,10 @@ public class TableTest {
 		table.setSize(10, 10);
 		assertFalse(table.isOnTable(15, 15));
 	}
+	
+	@Test
+	public void testToCheckNegetiveNoIsNotOnTheTable(){
+		table.setSize(10, 10);
+		assertFalse(table.isOnTable(-3, -10));
+	}
 }
