@@ -10,6 +10,7 @@ package my.project.robocontrol;
 enum POSITION
 {
 	NORTH,EAST,SOUTH,WEST;
+	public final int NOOFDIRECTIONS = 4;
 	private int xCoordinate, yCoordinate;
 	public void setXY(int x, int y){
 		xCoordinate = x;
@@ -48,7 +49,9 @@ protected POSITION position;
 	
 	public void turnRight()
 	{
-		//to be written
+		int index = position.ordinal();
+		index = (index + 1) % position.NOOFDIRECTIONS;
+		position = POSITION.values()[index];
 	}
 	public void turnLeft()
 	{
