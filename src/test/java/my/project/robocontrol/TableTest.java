@@ -13,7 +13,7 @@ public class TableTest {
 	Table table; 
 	@Before
 	public void setUp() throws Exception {
-		
+		table = Table.getInstance();
 	}
 
 	@After
@@ -22,7 +22,11 @@ public class TableTest {
 
 	@Test
 	public void testToGetTableBreadthFromTableStaticIntance() {
-		assertEquals(5, Table.getInstance().getBreadth());
+		assertEquals(5, table.getBreadth());
+	}
+	@Test
+	public void testToGetTableWidthFromTableStaticIntance() {
+		assertEquals(5, table.getBreadth());
 	}
 
 }
