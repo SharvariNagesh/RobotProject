@@ -22,7 +22,7 @@ public class TableTest {
 
 	@Test
 	public void testToGetTableBreadthFromTableStaticIntance() {
-		assertEquals(0, Table.getInstance().getBreadth());
+		assertEquals(5, Table.getInstance().getBreadth());
 	}
 
 }
