@@ -10,25 +10,24 @@ import org.junit.Test;
 
 public class RobotTest {
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
+	Robot robot;
+	
 	@Before
 	public void setUp() throws Exception {
+		robot = new Robot();
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		robot = null;
 	}
 
 	@Test
-	public void test() {
-	//	fail("Not yet implemented");
+	public void testToCreateARobotAndPlaceIt() {
+	  POSITION pos = POSITION.valueOf("NORTH");
+	  robot.place(pos, 0, 0);
+	  assertEquals("0,0,NORTH", robot.report());
 	}
+	
 
 }
