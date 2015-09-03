@@ -28,5 +28,15 @@ public class TableTest {
 	public void testToGetTableWidthFromTableStaticIntance() {
 		assertEquals(5, table.getBreadth());
 	}
-
+	
+	@Test
+	public void testToSetTableWidthAndBreadthAndCheckBreadthFromTableStaticIntance() {
+		table.setSize(10, 10);
+		assertEquals(10, table.getBreadth());
+	}
+	@Test
+	public void testToSetTableWidthAndBreadthAndCheckWidthFromTableStaticIntance() {
+		table.setSize(10, 10);
+		assertEquals(10, table.getWidth());
+	}
 }
