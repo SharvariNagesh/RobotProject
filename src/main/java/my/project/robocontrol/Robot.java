@@ -7,27 +7,10 @@ package my.project.robocontrol;
  * An Enum is used to describe the directions. Enum Position has also a X & Y coordinate inside it.
  * ENUMs were introduced from Java 1.5. So this program is not compatible with java older than version 1.5
  */
-enum POSITION
-{
-	NORTH,EAST,SOUTH,WEST;
-	public final int NOOFDIRECTIONS = 4;
-	private int xCoordinate, yCoordinate;
-	public void setXY(int x, int y){
-		xCoordinate = x;
-		yCoordinate = y;
-	}
-	public int getX()
-	{
-		return xCoordinate;
-	}
-	public int getY()
-	{
-		return yCoordinate;
-	}
-}
-public class Robot {
-protected POSITION position;	
 
+public class Robot {
+private DIRECTIONS direction;	
+private Coordinates xycoordinates;
 	public void Robot()
 	{
 		
@@ -35,11 +18,10 @@ protected POSITION position;
 	}
 	
 	//While placing the robot, command initiator should check whether they are placing the robot on the table or not. Robot will not check this.
-		public void place(POSITION pos, int x, int y)
+		public void place(DIRECTIONS pos, int x, int y)
 	{
-		position = pos;
-		position.setXY(x, y);
-	
+			direction = pos;
+			xycoordinates.setXY(x, y);
 	}
 
 	public void move()
@@ -49,20 +31,20 @@ protected POSITION position;
 	
 	public void turnRight()
 	{
-		int index = position.ordinal();
-		index = (index + 1) % position.NOOFDIRECTIONS;
-		position = POSITION.values()[index];
+		int index = direction.ordinal();
+		index = (index + 1) % direction.NOOFDIRECTIONS;
+		direction = DIRECTIONS.values()[index];
 	}
 	public void turnLeft()
 	{
-		int index = position.ordinal();
-		index = ((index - 1) >=0)? (index -1) : (position.NOOFDIRECTIONS -1);
-		position = POSITION.values()[index];
+		int index = direction.ordinal();
+		index = ((index - 1) >=0)? (index -1) : (direction.NOOFDIRECTIONS -1);
+		direction = DIRECTIONS.values()[index];
 	}
 	public String report()
 	{
 		String reportPosition;
-		reportPosition = String.format("%d,%d %s",position.getX(), position.getY(), position.toString());
+		reportPosition = String.format("%d,%d %s",xycoordinates.getX(), xycoordinates.getY(), direction.toString());
 		
 		System.out.println("Current position of the Robot :" + reportPosition);
 		return reportPosition;
