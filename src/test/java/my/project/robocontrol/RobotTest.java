@@ -89,6 +89,6 @@ public class RobotTest {
 	 DIRECTIONS pos = DIRECTIONS.valueOf("EAST");
 	  robot.place(pos, 0, 0);
 	  robot.move();
-	  assertEquals("0,-1 EAST", robot.report());
+	  assertEquals("1,0 EAST", robot.report());
 	}
 }

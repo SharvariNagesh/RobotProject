@@ -19,4 +19,16 @@ public class Coordinates {
 	public int getY(){
 		return yCoordinate;
 	}
+	public void incrementX(){
+		xCoordinate++;
+	}
+	public void incrementY(){
+		yCoordinate++;
+	}
+	public void decrementX(){
+		xCoordinate--;
+	}
+	public void decrementY(){
+		yCoordinate--;
+	}
 }

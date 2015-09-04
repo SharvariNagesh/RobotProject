@@ -14,7 +14,6 @@ private Coordinates xycoordinates;
 	public Robot()
 	{
 		xycoordinates = new Coordinates(-1, -1);	
-	
 	}
 	
 	//While placing the robot, command initiator should check whether they are placing the robot on the table or not. Robot will not check this.
@@ -26,7 +25,7 @@ private Coordinates xycoordinates;
 
 	public void move()
 	{
-		//to be written
+		xycoordinates = direction.move(xycoordinates);
 	}
 	
 	public void turnRight()
