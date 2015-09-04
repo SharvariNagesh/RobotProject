@@ -49,7 +49,15 @@ public class RobotTest {
 	public void testToTurnLeftRobotFacingWest() {
 	  POSITION pos = POSITION.valueOf("WEST");
 	  robot.place(pos, 0, 0);
-	  robot.turnRight();
+	  robot.turnLeft();
 	  assertEquals("0,0 SOUTH", robot.report());
+	}
+
+	@Test
+	public void testToTurnLeftRobotFacing() {
+	  POSITION pos = POSITION.valueOf("NORTH");
+	  robot.place(pos, 0, 0);
+	  robot.turnLeft();
+	  assertEquals("0,0 WEST", robot.report());
 	}
 }

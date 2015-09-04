@@ -55,7 +55,9 @@ protected POSITION position;
 	}
 	public void turnLeft()
 	{
-		//to be written
+		int index = position.ordinal();
+		index = ((index - 1) >=0)? (index -1) : (position.NOOFDIRECTIONS -1);
+		position = POSITION.values()[index];
 	}
 	public String report()
 	{
