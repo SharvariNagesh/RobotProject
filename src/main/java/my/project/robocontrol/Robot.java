@@ -11,16 +11,16 @@ package my.project.robocontrol;
 public class Robot {
 private DIRECTIONS direction;	
 private Coordinates xycoordinates;
-	public void Robot()
+	public Robot()
 	{
-		
-	 //constructor	
+		xycoordinates = new Coordinates(-1, -1);	
+	
 	}
 	
 	//While placing the robot, command initiator should check whether they are placing the robot on the table or not. Robot will not check this.
-		public void place(DIRECTIONS pos, int x, int y)
+		public void place(DIRECTIONS newdirection, int x, int y)
 	{
-			direction = pos;
+			this.direction = newdirection;
 			xycoordinates.setXY(x, y);
 	}
 
