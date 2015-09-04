@@ -44,4 +44,12 @@ public class RobotTest {
 	  robot.turnRight();
 	  assertEquals("0,0 NORTH", robot.report());
 	}
+	
+	@Test
+	public void testToTurnLeftRobotFacingWest() {
+	  POSITION pos = POSITION.valueOf("WEST");
+	  robot.place(pos, 0, 0);
+	  robot.turnRight();
+	  assertEquals("0,0 SOUTH", robot.report());
+	}
 }
