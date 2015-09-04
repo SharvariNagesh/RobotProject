@@ -54,10 +54,41 @@ public class RobotTest {
 	}
 
 	@Test
-	public void testToTurnLeftRobotFacing() {
+	public void testToTurnLeftRobotFacingNorth() {
 	 DIRECTIONS pos = DIRECTIONS.valueOf("NORTH");
 	  robot.place(pos, 0, 0);
 	  robot.turnLeft();
 	  assertEquals("0,0 WEST", robot.report());
+	}
+
+	@Test
+	public void testTomoveRobotFacingNorthAt00() {
+	 DIRECTIONS pos = DIRECTIONS.valueOf("NORTH");
+	  robot.place(pos, 0, 0);
+	  robot.move();
+	  assertEquals("0,1 NORTH", robot.report());
+	}
+	
+	@Test
+	public void testTomoveRobotFacingWestAt00() {
+	 DIRECTIONS pos = DIRECTIONS.valueOf("WEST");
+	  robot.place(pos, 0, 0);
+	  robot.move();
+	  assertEquals("-1,0 WEST", robot.report());
+	}
+	@Test
+	public void testTomoveRobotFacingSouthAt00() {
+	 DIRECTIONS pos = DIRECTIONS.valueOf("SOUTH");
+	  robot.place(pos, 0, 0);
+	  robot.move();
+	  assertEquals("0,-1 SOUTH", robot.report());
+	}
+	
+	@Test
+	public void testTomoveRobotFacingEastAt00() {
+	 DIRECTIONS pos = DIRECTIONS.valueOf("EAST");
+	  robot.place(pos, 0, 0);
+	  robot.move();
+	  assertEquals("0,-1 EAST", robot.report());
 	}
 }
