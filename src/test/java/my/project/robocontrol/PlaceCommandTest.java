@@ -30,10 +30,16 @@ Robot robot ;
 	}
 
 	@Test
-	public void test() {
+	public void testBasicPlaceCommandImplementation() {
 		placeCmdTest = new PlaceCommand(robot, "PLACE 3,3,EAST");
 		placeCmdTest.execute();
 		assertEquals("3,3 EAST", robot.report());
 	}
-
+	
+	@Test
+	public void testWrongDirectionValueInPlaceCommand() {
+		placeCmdTest = new PlaceCommand(robot, "PLACE 3,3,EEEAST");
+		placeCmdTest.execute();
+		assertEquals("Robot Not Placed Properly On The Table", robot.report());
+	}
 }
