@@ -56,4 +56,11 @@ Robot robot ;
 		placeCmdTest.execute();
 		assertEquals("Robot Not Placed Properly On The Table", robot.report());
 	}
+	
+	@Test
+	public void testToPlaceRobotOutOfTheTableSurface() {
+		placeCmdTest = new PlaceCommand(robot, "PLACE 50,3,WEST");
+		placeCmdTest.execute();
+		assertEquals("Robot Not Placed Properly On The Table", robot.report());
+	}
 }

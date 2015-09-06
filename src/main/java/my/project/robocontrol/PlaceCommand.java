@@ -33,12 +33,18 @@ public class PlaceCommand implements RoboCommands {
 			if (Table.getInstance().isOnTable(xy)){
 				robot.place(facing, xy);
 			}
+			//If the coordinates pased is out of the table, the PLACE command is ignored
 		
 		}catch(NullPointerException npe){
 			//Nothing is done here. The command is ignored
 		}catch(IllegalArgumentException iae){
 			//If illegal arguments are passed, the command will be ignored
-			//System.out.println("IllegalArgumentException :" + iae.getMessage());
+			
+		}catch( ArrayIndexOutOfBoundsException aiob){
+			// If insufficient arguments are passed, command is ignored
+		}
+		catch(Exception e){
+			//All other Exceptions are caught here and ignored.
 		}
 	}
 }
