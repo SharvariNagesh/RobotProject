@@ -17,10 +17,10 @@ private Coordinates xycoordinates;
 	}
 	
 	//While placing the robot, command initiator should check whether they are placing the robot on the table or not. Robot will not check this.
-	public void place(DIRECTIONS newdirection, int x, int y)
+	public void place(DIRECTIONS newdirection, Coordinates xy)
 	{
 			this.direction = newdirection;
-			xycoordinates.setXY(x, y);
+			this.xycoordinates = xy;
 	}
 
 	public void move()
@@ -43,7 +43,7 @@ private Coordinates xycoordinates;
 	public String report()
 	{
 		String reportPosition;
-		if (xycoordinates.isCoordinatesSet()){
+		if (xycoordinates.isCoordinatesSet() || (direction != null)){
 			reportPosition = String.format("%d,%d %s",xycoordinates.getX(), xycoordinates.getY(), direction.toString());
 			System.out.println("Current position of the Robot :" + reportPosition);
 			return reportPosition;

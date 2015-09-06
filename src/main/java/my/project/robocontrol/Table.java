@@ -34,9 +34,11 @@ public class Table {
 		  breadth = y;
 		}
 	}
-	public boolean isOnTable(int x, int y)
+	public boolean isOnTable(Coordinates xy)
 	{
-		   return ((x<= width && x>=0) &&( y<=breadth && y>=0))?  true :  false;
+		int x = xy.getX();
+		int y = xy.getY();
+		return ((x<= width && x>=0) &&( y<=breadth && y>=0))?  true :  false;
 	}
 	public int getWidth(){
 		return width;

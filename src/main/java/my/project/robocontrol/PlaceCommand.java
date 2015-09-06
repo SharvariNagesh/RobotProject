@@ -27,16 +27,18 @@ public class PlaceCommand implements RoboCommands {
 		
 			//If the direction is not valid, it throws an exception which will be caught by the catch block
 			DIRECTIONS facing = DIRECTIONS.valueOf(parameters[2]); 
-		
+		    
+			Coordinates xy = new Coordinates(xCoordinate,yCoordinate);
 	   
-			if (Table.getInstance().isOnTable(xCoordinate,yCoordinate)){
-				robot.place(facing, xCoordinate, yCoordinate);
-			
+			if (Table.getInstance().isOnTable(xy)){
+				robot.place(facing, xy);
 			}
+		
 		}catch(NullPointerException npe){
 			//Nothing is done here. The command is ignored
 		}catch(IllegalArgumentException iae){
-			System.out.println ("Illegal Argument Exception");
+			//If illegal arguments are passed, the command will be ignored
+			//System.out.println ("Illegal Argument Exception");
 		}
 	}
 }

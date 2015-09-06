@@ -11,9 +11,12 @@ import org.junit.Test;
 public class TableTest {
 
 	Table table; 
+	Coordinates xy;
+	
 	@Before
 	public void setUp() throws Exception {
 		table = Table.getInstance();
+		xy = new Coordinates(-1,-1);
 	}
 
 	@After
@@ -94,41 +97,48 @@ public class TableTest {
 	@Test
 	public void testTocheckIfASetOfCoordinatesIsOnTheTable(){
 		table.setSize(10, 10);
-		assertTrue(table.isOnTable(5, 5));
+		xy.setXY(5, 5);
+		assertTrue(table.isOnTable(xy));
 	}
 	
 	@Test
 	public void testTocheckIfASetOfCoordinatesIsNotOnTheTable(){
 		table.setSize(10, 10);
-		assertFalse(table.isOnTable(15, 15));
+		xy.setXY(15, 15);
+		assertFalse(table.isOnTable(xy));
 	}
 	
 	@Test
 	public void testToCheckNegetiveNoIsNotOnTheTable(){
 		table.setSize(10, 10);
-		assertFalse(table.isOnTable(-3, -10));
+		xy.setXY(-3, -10);
+		assertFalse(table.isOnTable(xy));
 	}
 	
 	@Test
 	public void testToCheckIfYCoordinate0IsOnTheTable(){
 		table.setSize(10, 10);
-		assertTrue(table.isOnTable(3, 0));
+		xy.setXY(3, 0);
+		assertTrue(table.isOnTable(xy));
 	}
 	
 	@Test
 	public void testToCheckIfBothCoordinate0IsOnTheTable(){
 		table.setSize(10, 10);
-		assertTrue(table.isOnTable(0, 0));
+		xy.setXY(0, 0);
+		assertTrue(table.isOnTable(xy));
 	}
 	@Test
 	public void testToCheckIfXCoordinate0IsOnTheTable(){
 		table.setSize(10, 10);
-		assertTrue(table.isOnTable(0, 10));
+		xy.setXY(0, 10);
+		assertTrue(table.isOnTable(xy));
 	}
 	
 	@Test
 	public void testToCheckIfXYCoordinateMaxIsOnTheTable(){
 		table.setSize(10, 10);
-		assertTrue(table.isOnTable(10, 10));
+		xy.setXY(10, 10);
+		assertTrue(table.isOnTable(xy));
 	}
 }
