@@ -17,7 +17,7 @@ private Coordinates xycoordinates;
 	}
 	
 	//While placing the robot, command initiator should check whether they are placing the robot on the table or not. Robot will not check this.
-		public void place(DIRECTIONS newdirection, int x, int y)
+	public void place(DIRECTIONS newdirection, int x, int y)
 	{
 			this.direction = newdirection;
 			xycoordinates.setXY(x, y);
