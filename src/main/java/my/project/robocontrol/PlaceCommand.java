@@ -38,7 +38,7 @@ public class PlaceCommand implements RoboCommands {
 			//Nothing is done here. The command is ignored
 		}catch(IllegalArgumentException iae){
 			//If illegal arguments are passed, the command will be ignored
-			//System.out.println ("Illegal Argument Exception");
+			//System.out.println("IllegalArgumentException :" + iae.getMessage());
 		}
 	}
 }

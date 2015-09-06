@@ -42,4 +42,18 @@ Robot robot ;
 		placeCmdTest.execute();
 		assertEquals("Robot Not Placed Properly On The Table", robot.report());
 	}
+
+	@Test
+	public void testNonIntegerXCoordinateValueInPlaceCommand() {
+		placeCmdTest = new PlaceCommand(robot, "PLACE A,3,EEEAST");
+		placeCmdTest.execute();
+		assertEquals("Robot Not Placed Properly On The Table", robot.report());
+	}
+	
+	@Test
+	public void testNoDirectionValueInPlaceCommand() {
+		placeCmdTest = new PlaceCommand(robot, "PLACE 5,3");
+		placeCmdTest.execute();
+		assertEquals("Robot Not Placed Properly On The Table", robot.report());
+	}
 }
