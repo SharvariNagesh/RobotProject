@@ -31,4 +31,7 @@ public class Coordinates {
 	public void decrementY(){
 		yCoordinate--;
 	}
+	public boolean isCoordinatesSet(){
+		return ((xCoordinate >= 0) && (yCoordinate >=0))? true : false; 
+	}
 }

@@ -43,9 +43,12 @@ private Coordinates xycoordinates;
 	public String report()
 	{
 		String reportPosition;
-		reportPosition = String.format("%d,%d %s",xycoordinates.getX(), xycoordinates.getY(), direction.toString());
-		
-		System.out.println("Current position of the Robot :" + reportPosition);
-		return reportPosition;
+		if (xycoordinates.isCoordinatesSet()){
+			reportPosition = String.format("%d,%d %s",xycoordinates.getX(), xycoordinates.getY(), direction.toString());
+			System.out.println("Current position of the Robot :" + reportPosition);
+			return reportPosition;
+		}else{
+			return("Robot Not Placed Properly On The Table");
+		}
 	}
 }
