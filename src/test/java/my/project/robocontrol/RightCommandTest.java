@@ -30,7 +30,7 @@ public class RightCommandTest {
 	}
 
 	@Test
-	public void testForLeftTurnWhenRobotIsNotPlaced() {
+	public void testForRightTurnWhenRobotIsNotPlaced() {
 		Robot robot2 = new Robot();
 		RoboCommands rightCmd = new RightCommand(robot2, "RIGHT");
 		rightCmd.execute();
@@ -38,7 +38,7 @@ public class RightCommandTest {
 	}
 	
 	@Test
-	public void testForLeftTurnWhenRobotIsNotInitializedNoExceptionShouldBeThrown() {
+	public void testForRightTurnWhenRobotIsNotInitializedNoExceptionShouldBeThrown() {
 		Robot robot2 = null;
 		RoboCommands rightCmd = new RightCommand(robot2, "RIGHT");
 		rightCmd.execute();
