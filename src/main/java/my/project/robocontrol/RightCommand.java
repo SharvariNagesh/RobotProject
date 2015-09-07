@@ -9,7 +9,7 @@ private Robot robot;
 	}
 	public void execute()
 	{
-		if(robot.isRobotPlaced())
+		if(robot!= null && robot.isRobotPlaced())
 		{
 			robot.turnRight();
 		}
