@@ -18,8 +18,12 @@ public class ReportCommand implements RoboCommands {
 	}
 	public String execute()
 	{
-		report = robot.report();
-		return report;
+		if(robot != null){
+			report = robot.report();
+			return report;	
+		}
+		return null;
+		
 	}
 
 }
