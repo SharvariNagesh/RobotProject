@@ -20,10 +20,15 @@ public class ReportCommand implements RoboCommands {
 	{
 		if(robot != null){
 			report = robot.report();
-			return report;	
+			if(report != null){
+				
+				System.out.println("Robot Position :" + report);
+				return report;
+			}
+			
 		}
-		return null;
-		
+		report = new String("Robot Not Placed Properly On The Table");
+		System.out.println(report);
+		return report;
 	}
-
 }

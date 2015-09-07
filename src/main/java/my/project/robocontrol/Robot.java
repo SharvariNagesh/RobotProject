@@ -42,7 +42,7 @@ private Coordinates xycoordinates;
 	}
 
 	public boolean isRobotPlaced(){
-		if (xycoordinates.isCoordinatesSet() || (direction != null)){
+		if (xycoordinates.isCoordinatesSet() && (direction != null)){
 			return true;
 		}
 		return false;
@@ -55,8 +55,8 @@ private Coordinates xycoordinates;
 			System.out.println("Current position of the Robot :" + reportPosition);
 			return reportPosition;
 		}else{
-			return("Robot Not Placed Properly On The Table");
-		
+			return null;
+		   
 		}
 	}
 }
