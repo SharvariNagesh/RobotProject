@@ -16,8 +16,9 @@ private Robot robot;
     }
 	public void execute()
 	{
-		
+		if(robot.isRobotPlaced())
+		{
 			robot.turnLeft();
-		
+		}
 	}
 }

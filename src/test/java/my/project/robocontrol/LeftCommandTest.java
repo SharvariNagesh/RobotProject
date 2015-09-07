@@ -44,7 +44,7 @@ private RoboCommands leftCmd;
 		Robot robot2 = new Robot();
 		RoboCommands leftCmd = new LeftCommand(robot2, "LEFT");
 		leftCmd.execute();
-		assertEquals(null, robot.report());
+		assertEquals("Robot Not Placed Properly On The Table", robot.report());
 		
 	}
 

@@ -40,15 +40,23 @@ private Coordinates xycoordinates;
 		index = ((index - 1) >=0)? (index -1) : (direction.NOOFDIRECTIONS -1);
 		direction = DIRECTIONS.values()[index];
 	}
+
+	public boolean isRobotPlaced(){
+		if (xycoordinates.isCoordinatesSet() || (direction != null)){
+			return true;
+		}
+		return false;
+	}
 	public String report()
 	{
 		String reportPosition;
-		if (xycoordinates.isCoordinatesSet() || (direction != null)){
+		if (this.isRobotPlaced()){
 			reportPosition = String.format("%d,%d %s",xycoordinates.getX(), xycoordinates.getY(), direction.toString());
 			System.out.println("Current position of the Robot :" + reportPosition);
 			return reportPosition;
 		}else{
 			return("Robot Not Placed Properly On The Table");
+		
 		}
 	}
 }
