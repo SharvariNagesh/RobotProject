@@ -26,7 +26,7 @@ public class ReportCommandTest {
 	@Test
 	public void testBasicReportCommandImplementation() {
 		placeCmd.execute();
-	    assertEqual("3,3,SOUTH", reportCmd.execute());
+	    assertEquals("3,3,SOUTH", reportCmd.execute());
 	}
 
 }
