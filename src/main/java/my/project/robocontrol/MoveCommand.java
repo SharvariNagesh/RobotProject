@@ -18,7 +18,7 @@ public class MoveCommand implements RoboCommands {
   }
   public String execute()
   {
-	  if(robot!= null)
+	  if(robot!= null && robot.isRobotPlaced())
 	  {
 		  robot.move();
 	  }

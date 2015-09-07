@@ -45,4 +45,13 @@ private RoboCommands reportCmd;
 		moveCmd2.execute();
 		assertEquals("Robot not placed on the Table",reportCmd2.execute());
 	}
+	
+	@Test
+	public void testForMoveWhenRobotIsNotPlaced() {
+		Robot robot2 = new Robot();
+		RoboCommands moveCmd2 = new MoveCommand(robot2,"MOVE");
+		RoboCommands reportCmd2 = new ReportCommand(robot2, "REPORT");
+		moveCmd2.execute();
+		assertEquals("Robot not placed on the Table",reportCmd2.execute());
+	}
 }
