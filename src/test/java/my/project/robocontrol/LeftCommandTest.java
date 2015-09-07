@@ -39,4 +39,13 @@ private RoboCommands leftCmd;
 		
 	}
 
+	@Test
+	public void testForLeftTurnWhenRobotIsNotPlaced() {
+		Robot robot2 = new Robot();
+		RoboCommands leftCmd = new LeftCommand(robot2, "LEFT");
+		leftCmd.execute();
+		assertEquals(null, robot.report());
+		
+	}
+
 }
