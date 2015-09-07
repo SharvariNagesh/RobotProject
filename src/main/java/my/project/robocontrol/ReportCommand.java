@@ -10,14 +10,16 @@ package my.project.robocontrol;
  *
  */
 public class ReportCommand implements RoboCommands {
-	
+	Robot robot;
+	String report;
 	public ReportCommand(Robot robot, String command)
 	{
-		
+		this.robot = robot;
 	}
 	public String execute()
 	{
-		return null;
+		report = robot.report();
+		return report;
 	}
 
 }
