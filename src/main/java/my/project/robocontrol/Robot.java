@@ -50,9 +50,9 @@ private Coordinates xycoordinates;
 	public String report()
 	{
 		String reportPosition;
-		if (this.isRobotPlaced()){
+		if (direction != null){
 			reportPosition = String.format("%d,%d %s",xycoordinates.getX(), xycoordinates.getY(), direction.toString());
-			System.out.println("Current position of the Robot :" + reportPosition);
+			
 			return reportPosition;
 		}else{
 			return null;

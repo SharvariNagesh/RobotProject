@@ -78,7 +78,8 @@ public class RobotTest {
 	  assertEquals("0,1 NORTH", robot.report());
 	}
 	
-	@Test
+	
+	 @Test
 	public void testTomoveRobotFacingWestAt00() {
 	 DIRECTIONS pos = DIRECTIONS.valueOf("WEST");
 	  xy.setXY(0, 0);

@@ -40,28 +40,28 @@ Robot robot ;
 	public void testWrongDirectionValueInPlaceCommand() {
 		placeCmdTest = new PlaceCommand(robot, "PLACE 3,3,EEEAST");
 		placeCmdTest.execute();
-		assertEquals("Robot Not Placed Properly On The Table", robot.report());
+		assertEquals(null, robot.report());
 	}
 
 	@Test
 	public void testNonIntegerXCoordinateValueInPlaceCommand() {
 		placeCmdTest = new PlaceCommand(robot, "PLACE A,3,EEEAST");
 		placeCmdTest.execute();
-		assertEquals("Robot Not Placed Properly On The Table", robot.report());
+		assertEquals(null, robot.report());
 	}
 	
 	@Test
 	public void testNoDirectionValueInPlaceCommand() {
 		placeCmdTest = new PlaceCommand(robot, "PLACE 5,3");
 		placeCmdTest.execute();
-		assertEquals("Robot Not Placed Properly On The Table", robot.report());
+		assertEquals(null, robot.report());
 	}
 	
 	@Test
 	public void testToPlaceRobotOutOfTheTableSurface() {
 		placeCmdTest = new PlaceCommand(robot, "PLACE 50,3,WEST");
 		placeCmdTest.execute();
-		assertEquals("Robot Not Placed Properly On The Table", robot.report());
+		assertEquals(null, robot.report());
 	}
 	
 	@Test
