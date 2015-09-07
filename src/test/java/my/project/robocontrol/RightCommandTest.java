@@ -38,10 +38,10 @@ public class RightCommandTest {
 	}
 	
 	@Test
-	public void testForLeftTurnWhenRobotIsNotInitialized() {
+	public void testForLeftTurnWhenRobotIsNotInitializedNoExceptionShouldBeThrown() {
 		Robot robot2 = null;
 		RoboCommands rightCmd = new RightCommand(robot2, "RIGHT");
 		rightCmd.execute();
-		assertEquals(null, robot.report());
+		
 	}
 }
