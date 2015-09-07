@@ -14,11 +14,12 @@ private Robot robot;
     {
     	this.robot = robot;
     }
-	public void execute()
+	public String execute()
 	{
 		if(robot!= null && robot.isRobotPlaced())
 		{
 			robot.turnLeft();
 		}
+		return null;
 	}
 }

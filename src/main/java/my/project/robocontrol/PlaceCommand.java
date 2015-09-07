@@ -14,7 +14,7 @@ public class PlaceCommand implements RoboCommands {
 	
 	//This is the execute command implementation. 
 	@Override
-	public void execute(){
+	public String execute(){
 		
 		String[] cmdAndParameters = command.split("[ ]+");
 		String[] parameters = cmdAndParameters[1].split(",");
@@ -46,5 +46,6 @@ public class PlaceCommand implements RoboCommands {
 		catch(Exception e){
 			//All other Exceptions are caught here and ignored.
 		}
+		return null;
 	}
 }

@@ -11,6 +11,6 @@ package my.project.robocontrol;
  */
 public interface RoboCommands {
 
-	public void execute();
+	public String execute();
 }
 
