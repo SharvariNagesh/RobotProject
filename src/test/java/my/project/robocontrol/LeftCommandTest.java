@@ -48,5 +48,11 @@ private RoboCommands leftCmd;
 		
 	}
 
-	
+	@Test
+	public void testForLeftTurnWhenRobotIsNotInitializedNoExceptionShouldBeThrown() {
+		Robot robot2 = null;
+		RoboCommands leftCmd = new LeftCommand(robot2, "LEFT");
+		leftCmd.execute();
+		
+	}
 }
