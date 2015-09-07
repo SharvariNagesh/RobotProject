@@ -42,6 +42,6 @@ public class ReportCommandTest {
 		Robot robot2 = new Robot();
 		RoboCommands reportCmd = new ReportCommand(robot2, "REPORT");
 		
-		assertEquals("Robot Not Placed Properly On The Table",reportCmd.execute());
+		assertEquals("Robot not placed on the Table",reportCmd.execute());
 	}
 }

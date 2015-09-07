@@ -6,8 +6,7 @@ package my.project.robocontrol;
  * ReportCommand class implements RoboCommands interface(execute() method). 
  * ReportCommand takes care of calling report method of the Robot.
  * It also handles calling the report function on null objects. 
- * calling report method without placing the Robot is also handled by this class.
- * Report Command is responsible for displaying the position in proper format.
+ * calling report method without placing the Robot is also handled by this class
  *
  */
 public class ReportCommand implements RoboCommands {
@@ -28,8 +27,10 @@ public class ReportCommand implements RoboCommands {
 			}
 			
 		}
-		report = new String("Robot Not Placed Properly On The Table");
-		System.out.println(report);
+		report ="Robot not placed on the Table";
+		System.out.println("Robot Position :" + report);
 		return report;
+		
 	}
+
 }
