@@ -28,5 +28,13 @@ public class ReportCommandTest {
 		placeCmd.execute();
 	    assertEquals("3,3 SOUTH", reportCmd.execute());
 	}
+	
+	@Test
+	public void testReportCommandImplementationWhenNullObjectIsPassedForRobot() {
+		Robot robot2 = null;
+		ReportCommand reportCmd = new ReportCommand(robot2,"REPORT");
+		reportCmd.execute();
+	    
+	}
 
 }
