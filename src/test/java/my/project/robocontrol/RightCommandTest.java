@@ -37,4 +37,11 @@ public class RightCommandTest {
 		assertEquals("Robot Not Placed Properly On The Table", robot.report());
 	}
 	
+	@Test
+	public void testForLeftTurnWhenRobotIsNotInitialized() {
+		Robot robot2 = null;
+		RoboCommands rightCmd = new RightCommand(robot2, "RIGHT");
+		rightCmd.execute();
+		assertEquals(null, robot.report());
+	}
 }
