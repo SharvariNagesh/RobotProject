@@ -18,7 +18,10 @@ public class MoveCommand implements RoboCommands {
   }
   public String execute()
   {
-	 robot.move();
+	  if(robot!= null)
+	  {
+		  robot.move();
+	  }
 	return null;
   }
 }
