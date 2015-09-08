@@ -14,9 +14,10 @@ private RoboCommands reportCmd;
 	@Before
 	public void setUp() throws Exception {
 		robot = new Robot();
-		placeCmd = new PlaceCommand(robot, "PLACE 5,5,SOUTH");
+		
 		moveCmd = new MoveCommand(robot, "MOVE");
 		reportCmd = new ReportCommand(robot, "REPORT");
+		Table.getInstance().setSize(5, 5);
 	}
 
 	@After
@@ -28,6 +29,7 @@ private RoboCommands reportCmd;
 
 	@Test
 	public void testMoveCommand() {
+		placeCmd = new PlaceCommand(robot, "PLACE 5,5,SOUTH");
 		placeCmd.execute();
 		moveCmd.execute();
 		assertEquals("5,4 SOUTH", reportCmd.execute());
@@ -57,12 +59,80 @@ private RoboCommands reportCmd;
 	
 	@Test
 	public void testToMoveRobotOutOfTheTable() {
+		placeCmd = new PlaceCommand(robot, "PLACE 5,5,SOUTH");
 		RoboCommands left = new LeftCommand(robot,"LEFT");
-		Table.getInstance().setSize(5, 5);
+		
 		placeCmd.execute();
 		left.execute();
 		moveCmd.execute();
 		assertEquals("5,5 EAST", reportCmd.execute());
 		
 	}
+	
+	@Test
+	public void testToMoveRobotInNorthDirection() {
+		placeCmd = new PlaceCommand(robot, "PLACE 0,0,NORTH");
+		placeCmd.execute();
+		moveCmd.execute();
+		assertEquals("0,1 NORTH", reportCmd.execute());
+	}
+	
+	@Test
+	public void testToMoveRobotInEASTDirection() {
+		placeCmd = new PlaceCommand(robot, "PLACE 0,0,EAST");
+		placeCmd.execute();
+		moveCmd.execute();
+		assertEquals("1,0 EAST", reportCmd.execute());
+	}
+	
+	@Test
+	public void testToMoveRobotInWestDirection() {
+		placeCmd = new PlaceCommand(robot, "PLACE 3,3,WEST");
+		placeCmd.execute();
+		moveCmd.execute();
+		assertEquals("2,3 WEST", reportCmd.execute());
+	}
+	
+	@Test
+	public void testToMoveRobotInSouthDirection() {
+		placeCmd = new PlaceCommand(robot, "PLACE 2,2,SOUTH");
+		placeCmd.execute();
+		moveCmd.execute();
+		assertEquals("2,1 SOUTH", reportCmd.execute());
+	}
+	
+	//Some more tests to move Robot out of Table in all direction
+	
+	@Test
+	public void testToMoveRobotOutOfTableFromSouth() {
+		placeCmd = new PlaceCommand(robot, "PLACE 0,0,SOUTH");
+		placeCmd.execute();
+		moveCmd.execute();
+		assertEquals("0,0 SOUTH", reportCmd.execute());
+	}
+	
+	@Test
+	public void testToMoveRobotOutOfTableFromNorth() {
+		placeCmd = new PlaceCommand(robot, "PLACE 3,5,NORTH");
+		placeCmd.execute();
+		moveCmd.execute();
+		assertEquals("3,5 NORTH", reportCmd.execute());
+	}
+	
+	@Test
+	public void testToMoveRobotOutOfTableFromEast() {
+		placeCmd = new PlaceCommand(robot, "PLACE 5,2,EAST");
+		placeCmd.execute();
+		moveCmd.execute();
+		assertEquals("5,2 EAST", reportCmd.execute());
+	}
+	
+	@Test
+	public void testToMoveRobotOutOfTableFromWest() {
+		placeCmd = new PlaceCommand(robot, "PLACE 0,4,WEST");
+		placeCmd.execute();
+		moveCmd.execute();
+		assertEquals("0,4 WEST", reportCmd.execute());
+	}
+	
 }
