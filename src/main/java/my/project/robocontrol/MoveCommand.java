@@ -25,7 +25,7 @@ public class MoveCommand implements RoboCommands {
 	  {
 		  newXYCoordinates = new Coordinates(robot.getCoordinates());
 		  robotDirection = robot.getDirection();
-		  robotDirection.move(newXYCoordinates);
+		  newXYCoordinates = robotDirection.moveInDirection(newXYCoordinates);
 		  if(Table.getInstance().isOnTable(newXYCoordinates))
 		  {
 		    robot.move();

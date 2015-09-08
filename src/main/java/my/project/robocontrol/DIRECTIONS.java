@@ -3,7 +3,7 @@ package my.project.robocontrol;
 public enum DIRECTIONS{
 	NORTH
 	{
-		public Coordinates move(Coordinates xy){
+		public Coordinates moveInDirection(Coordinates xy){
 			xy.incrementY();
 			return xy;
 		}
@@ -11,14 +11,14 @@ public enum DIRECTIONS{
 	},
 	EAST
 	{
-		public Coordinates move(Coordinates xy){
+		public Coordinates moveInDirection(Coordinates xy){
 			xy.incrementX();
 			return xy;
 		}
 	},
 	SOUTH
 	{
-		public Coordinates move(Coordinates xy){
+		public Coordinates moveInDirection(Coordinates xy){
 			xy.decrementY();
 			return xy;
 		}
@@ -26,11 +26,11 @@ public enum DIRECTIONS{
 	
 	WEST
 	{
-		public Coordinates move(Coordinates xy){
+		public Coordinates moveInDirection(Coordinates xy){
 			xy.decrementX();
 			return xy;
 		}
 	};
 	public final int NOOFDIRECTIONS = 4;
-	public abstract Coordinates move(Coordinates xy);
+	public abstract Coordinates moveInDirection(Coordinates xy);
 }

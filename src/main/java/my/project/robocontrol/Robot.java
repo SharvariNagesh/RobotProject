@@ -37,7 +37,7 @@ private Coordinates xycoordinates;
 
 	public void move()
 	{
-		xycoordinates = direction.move(xycoordinates);
+		xycoordinates = direction.moveInDirection(xycoordinates);
 	}
 	
 	public void turnRight()
