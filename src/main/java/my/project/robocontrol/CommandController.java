@@ -25,7 +25,13 @@ private String output;
    {
 	   this.robot = rbt;
 	 try{
-		 inputScanner = new Scanner(new File(fileName));
+		 if(fileName != null)
+		 {
+		    inputScanner = new Scanner(new File(fileName));
+		 }else
+		 {
+			 inputScanner = new Scanner(System.in);
+		 }
 	 }catch(FileNotFoundException fe)
 	 {
 		 System.out.println("Please provide a valid file. " + fileName +" could not be found");
@@ -80,6 +86,9 @@ private String output;
 			   break;
 		   case "REPORT" :
 			   roboCommand = new ReportCommand(robot,commandLine);
+			   break;
+		   case "EXIT" :
+			   //This case is used to exit the code when user is inputing from the commandline.
 			   break;
 			   //If any other invalid command is passed then, next line is read from the command file
 		   default:
