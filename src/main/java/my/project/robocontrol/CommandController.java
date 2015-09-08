@@ -5,22 +5,78 @@ package my.project.robocontrol;
  * @author Sharvari Nagesh
  *
  *This is the class which will read commands from a file and create appropriate instances of 
- *commands and stores the commands in an Array List.
- *This class is also responsible for executing the commands in order. 
+ *commands and executes them.
+ *
  */
 
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+
 
 public class CommandController {
 private Robot robot;
 private String fileName;
-   public CommandController(Robot robot, String fileName)
+private Scanner inputScanner;
+private String output;
+
+   public CommandController(Robot rbt, String fileName)
    {
-	    
+	   this.robot = rbt;
+	 try{
+		 inputScanner = new Scanner(new File(fileName));
+	 }catch(FileNotFoundException fe)
+	 {
+		 System.out.println("Please provide a valid file. " + fileName +" could not be found");
+	 }
    }
+   
    public String executeCommands()
    {
-	 return null;
+	   RoboCommands roboCommand;
+	   while(true)
+	   {
+		   roboCommand = getNextCommand();
+		   if (roboCommand != null)
+		   {
+			   output = roboCommand.execute();
+		   }else{
+			   return output;
+		   }
+	   }
+	 
+   }
+ 
+   public RoboCommands getNextCommand()
+   {
+	   RoboCommands roboCommand=null;
+	   
+	   if (!inputScanner.hasNextLine()){
+		   return null;
+	   }
+	   String commandLine = inputScanner.nextLine().toUpperCase();
+	   String command = commandLine.split("[ ]+")[0];
+	   switch(command)
+	   {
+	   case "PLACE":
+		   roboCommand = new PlaceCommand(robot,commandLine);
+		   break;
+		   
+	   case "MOVE":
+		   roboCommand = new MoveCommand(robot,commandLine);
+		   break;
+	   case "LEFT":
+		   roboCommand = new LeftCommand(robot,commandLine);
+		   break;
+	   case "RIGHT" :
+		   roboCommand = new RightCommand(robot,commandLine);
+		   break;
+	   case "REPORT" :
+		   roboCommand = new ReportCommand(robot,commandLine);
+		   break;
+	   
+	   }
+	   return roboCommand;
    }
 }

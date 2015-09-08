@@ -10,12 +10,12 @@ import org.junit.Test;
 
 public class CommandControllerTest {
 	private CommandController cmdController;
-	private static Robot robot;
+	private Robot robot;
 	private String fileName;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-	  robot = new Robot();
+	  
 	}
 
 	@AfterClass
@@ -24,6 +24,7 @@ public class CommandControllerTest {
 
 	@Before
 	public void setUp() throws Exception {
+		robot = new Robot();
 	}
 
 	@After
@@ -40,9 +41,10 @@ public class CommandControllerTest {
  */
 	@Test
 	public void testToCheckBasicConstructorOfCommandControl() {
+		
 		fileName = "RobotCommands.txt";
 		cmdController = new CommandController(robot,fileName);
-		assertEquals("Robot Position :3,1 EAST", cmdController.executeCommands());
+		assertEquals("3,1 EAST", cmdController.executeCommands());
 	}
 
 }
