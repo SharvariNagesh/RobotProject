@@ -40,11 +40,27 @@ public class CommandControllerTest {
  * REPORT
  */
 	@Test
-	public void testToCheckBasicConstructorOfCommandControl() {
+	public void testToCheckBasicCommandControl() {
 		
 		fileName = "RobotCommands.txt";
 		cmdController = new CommandController(robot,fileName);
 		assertEquals("3,1 EAST", cmdController.executeCommands());
 	}
 
+
+/*contents of RobotWrongCommands.txt
+ * 
+ * PLACE 3,3,SOUTH
+ * MOVE
+ * MVE
+ * LEFT
+ * REPORT
+ */
+	@Test
+	public void testToCheckCommandControlWhenWrongCommandIsPassed() {
+		
+		fileName = "RobotWrongCommands.txt";
+		cmdController = new CommandController(robot,fileName);
+		assertEquals("3,2 EAST", cmdController.executeCommands());
+	}
 }
