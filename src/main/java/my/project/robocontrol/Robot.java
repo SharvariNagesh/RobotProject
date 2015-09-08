@@ -47,6 +47,11 @@ private Coordinates xycoordinates;
 		}
 		return false;
 	}
+	
+	/*
+	 * Since Robot class does not check whether the move is on the table or not, it's coordinates can take -ve value
+	 * So, while reporting, only direction is checked. If it is null, null is returned.
+	 */
 	public String report()
 	{
 		String reportPosition;

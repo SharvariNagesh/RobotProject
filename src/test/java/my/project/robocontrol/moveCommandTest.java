@@ -54,4 +54,15 @@ private RoboCommands reportCmd;
 		moveCmd2.execute();
 		assertEquals("Robot not placed on the Table",reportCmd2.execute());
 	}
+	
+	@Test
+	public void testToMoveRobotOutOfTheTable() {
+		RoboCommands left = new LeftCommand(robot,"LEFT");
+		Table.getInstance().setSize(5, 5);
+		placeCmd.execute();
+		left.execute();
+		moveCmd.execute();
+		assertEquals("5,5 EAST", reportCmd.execute());
+		
+	}
 }
