@@ -29,6 +29,7 @@ public class CommandControllerTest {
 
 	@After
 	public void tearDown() throws Exception {
+		robot = null;
 	}
 
 /*contents of RobotCommands.txt ::w
@@ -42,7 +43,7 @@ public class CommandControllerTest {
 	@Test
 	public void testToCheckBasicCommandControl() {
 		
-		fileName = "RobotCommands.txt";
+		fileName = "dataForTest/RobotCommands.txt";
 		cmdController = new CommandController(robot,fileName);
 		assertEquals("3,1 EAST", cmdController.executeCommands());
 	}
@@ -59,8 +60,56 @@ public class CommandControllerTest {
 	@Test
 	public void testToCheckCommandControlWhenWrongCommandIsPassed() {
 		
-		fileName = "RobotWrongCommands.txt";
+		fileName = "dataForTest/RobotWrongCommands.txt";
 		cmdController = new CommandController(robot,fileName);
 		assertEquals("3,2 EAST", cmdController.executeCommands());
 	}
+	
+	/*contents of RobotWrongCommands.txt
+	 * 
+	 * 
+	 * MOVE
+	 * MOVE
+	 * LEFT
+	 * REPORT
+	 */
+		@Test
+		public void testToCheckCommandControlWithoutPlacingTheRobot() {
+			
+			fileName = "dataForTest/RobotCommandsWithoutPlaceCmd.txt";
+			cmdController = new CommandController(robot,fileName);
+			assertEquals("Robot not placed on the Table", cmdController.executeCommands());
+		}
+		
+		/*contents of RobotWrongCommands.txt
+		 * 
+		 * PLACE 20,20,NORTH 
+		 * MOVE
+		 * MOVE
+		 * LEFT
+		 * REPORT
+		 */
+			@Test
+			public void testToCheckCommandControlWhenRobotIsPlacedOutOfTable() {
+				
+				fileName = "dataForTest/RobotCommandsWitRobotPlacedOutOfTable.txt";
+				cmdController = new CommandController(robot,fileName);
+				assertEquals("Robot not placed on the Table", cmdController.executeCommands());
+			}
+	
+			/*contents of RobotWrongCommands.txt
+			 * 
+			 * PLACE 5,5,NORTH 
+			 * MOVE
+			 * MOVE
+			 * LEFT
+			 * REPORT
+			 */
+				@Test
+				public void testToCheckCommandWhenRobotIsMadeToMoveOutOfTable() {
+					
+					fileName = "dataForTest/RobotCommandsWitRobotMoveOutOfTable.txt";
+					cmdController = new CommandController(robot,fileName);
+					assertEquals("5,5 WEST", cmdController.executeCommands());
+				}
 }
