@@ -16,6 +16,18 @@ private Coordinates xycoordinates;
 		xycoordinates = new Coordinates(-1, -1);	
 	}
 	
+	/*
+	 * getCoordinates has to return a copy
+	 */
+	public Coordinates getCoordinates()
+	{
+		return xycoordinates;
+	}
+	
+	public DIRECTIONS getDirection()
+	{
+		return direction;
+	}
 	//While placing the robot, command initiator should check whether they are placing the robot on the table or not. Robot will not check this.
 	public void place(DIRECTIONS newdirection, Coordinates xy)
 	{

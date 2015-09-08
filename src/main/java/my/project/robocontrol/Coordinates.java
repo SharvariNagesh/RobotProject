@@ -8,6 +8,13 @@ public class Coordinates {
 		xCoordinate = x;
 		yCoordinate = y;
 	}
+	
+	//Defining a copy constructor
+	public Coordinates(Coordinates xy){
+		this.xCoordinate = xy.getX();
+		this.yCoordinate = xy.getY();
+	}
+	
 	public void setXY(int x,int y)
 	{
 		xCoordinate = x;
