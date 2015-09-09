@@ -6,6 +6,8 @@ package my.project.robocontrol;
  *
  *This is the class which will read commands from a file and create appropriate instances of 
  *commands and executes them.
+ *If the file is not passed for this class, it reads the command from input Stream.
+ *In case entering the commands for the program, user can use "EXIT" to exit from the program.
  *
  */
 
@@ -31,6 +33,7 @@ private String output;
 		 }else
 		 {
 			 inputScanner = new Scanner(System.in);
+			 System.out.println("Enter commands to control your ROBOT:");
 		 }
 	 }catch(FileNotFoundException fe)
 	 {
