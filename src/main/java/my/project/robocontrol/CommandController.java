@@ -62,6 +62,10 @@ private String output;
 	   RoboCommands roboCommand=null;
 	   boolean commandFound = false;
 	 
+	   if(inputScanner == null)
+	   {
+		   return null;
+	   }
 	   
 	   while(!commandFound)
 	   {
