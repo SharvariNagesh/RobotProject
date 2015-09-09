@@ -119,7 +119,7 @@ public class CommandControllerTest {
 		
 		fileName = "dataForTest/RobotCommandsNonExistent.txt";
 		cmdController = new CommandController(robot,fileName);
-		assertEquals("5,5 WEST", cmdController.executeCommands());
+		assertEquals(null, cmdController.executeCommands());
 	}
 	
 }
