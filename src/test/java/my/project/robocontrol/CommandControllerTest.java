@@ -122,4 +122,19 @@ public class CommandControllerTest {
 		assertEquals(null, cmdController.executeCommands());
 	}
 	
+	/*contents of RobotCommandsWithoutPlaceParameters.txt
+	 * 
+	 * PLACE
+	 * MOVE
+	 * MOVE
+	 * LEFT
+	 * REPORT
+	 */
+	@Test
+	public void testToCheckCommandWhenRobotIsPlacedWithoutParameters() {
+		
+		fileName = "dataForTest/RobotCommandsWithoutPlaceParameters.txt";
+		cmdController = new CommandController(robot,fileName);
+		assertEquals("Robot not placed on the Table", cmdController.executeCommands());
+	}
 }
