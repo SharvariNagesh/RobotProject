@@ -26,11 +26,12 @@ public class PlaceCommand implements RoboCommands {
 	@Override
 	public String execute(){
 		
-		String[] cmdAndParameters = command.split("[ ]+");
-		String[] parameters = cmdAndParameters[1].split(",");
-		
+	
 		try{
-		    //If a non integer is passed as parameter, Integer.parseInt throws an error and this command will be ignored
+			String[] cmdAndParameters = command.split("[ ]+");
+			String[] parameters = cmdAndParameters[1].split(",");
+			
+			//If a non integer is passed as parameter, Integer.parseInt throws an error and this command will be ignored
 		  
 			int xCoordinate = Integer.parseInt(parameters[0]);
 			int yCoordinate = Integer.parseInt(parameters[1]);
