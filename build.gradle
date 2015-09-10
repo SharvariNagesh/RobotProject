@@ -1,8 +1,14 @@
 apply plugin: 'java'
 
+jar {
+    manifest {
+            attributes 'Main-Class': 'my.project.robocontrol.RobotMain'
+	     }
+}
+
 repositories {
     mavenCentral()
-    }
+}
 
 dependencies {
   testCompile group: 'junit', name: 'junit', version: '4.11'
