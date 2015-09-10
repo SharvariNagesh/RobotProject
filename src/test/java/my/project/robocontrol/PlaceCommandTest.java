@@ -71,5 +71,7 @@ Robot robot ;
 		placeCmdTest.execute();
 		
 	}
+	
+
 }
 

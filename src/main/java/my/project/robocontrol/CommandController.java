@@ -1,13 +1,12 @@
 package my.project.robocontrol;
 
 /**
- * 
- * @author Sharvari Nagesh
+ * This is the class which will read commands from a command file and create appropriate instances of 
+ * command classes to execute the commands. If the file name is not passed or if null is passed as the 
+ * file name for this class constructor, it reads the commands from input Stream. When user is entering 
+ * Robot commands from console, user can use "EXIT" command to exit from the program.
  *
- *This is the class which will read commands from a file and create appropriate instances of 
- *commands and executes them.
- *If the file is not passed for this class, it reads the command from input Stream.
- *In case entering the commands for the program, user can use "EXIT" to exit from the program.
+ * @author Sharvari Nagesh
  *
  */
 
@@ -19,7 +18,6 @@ import java.io.FileNotFoundException;
 
 public class CommandController {
 private Robot robot;
-private String fileName;
 private Scanner inputScanner;
 private String output;
 
@@ -33,11 +31,11 @@ private String output;
 		 }else
 		 {
 			 inputScanner = new Scanner(System.in);
-			 System.out.println("Enter commands to control your ROBOT:");
+			 System.out.println("Enter commands to control your ROBOT(enter EXIT to exit the code):");
 		 }
 	 }catch(FileNotFoundException fe)
 	 {
-		 System.out.println("Please provide a valid file. " + fileName +" could not be found");
+		 System.out.println("Please provide a valid file. " + fileName +" could not be found" + fe.getMessage());
 	 }
    }
    
@@ -95,7 +93,7 @@ private String output;
 			   roboCommand = new ReportCommand(robot,commandLine);
 			   break;
 		   case "EXIT" :
-			   //This case is used to exit the code when user is inputing from the commandline.
+			   //This case is used to exit the code when user is inputing from the command line.
 			   break;
 			   //If any other invalid command is passed then, next line is read from the command file
 		   default:

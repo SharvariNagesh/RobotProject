@@ -1,7 +1,17 @@
 package my.project.robocontrol;
 
-/*
- * This is the class which implements the command to place the robot
+/**
+ * 
+ * This class implements the interface RoboCommands. This is the class which takes care of 
+ * placing the Robot properly on the table. It reads the arguments for command "PLACE" and 
+ * checks for the following things before placing the Robot on the table :.
+ *  1.The XY coordinates have valid integer values.
+ * 	2.Direction mentioned in the command is valid and is an accepted direction by the Robot.
+ * 	3. XY coordinate mentioned in the PLACE command lies within the table.
+ * If any of the above checks fail, PlaceCommand ignores the "PLACE" command.
+ * 
+ * 
+ *  @author Sharvari Nagesh
  */
 
 public class PlaceCommand implements RoboCommands {

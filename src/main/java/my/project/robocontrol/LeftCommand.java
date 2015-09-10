@@ -1,11 +1,12 @@
 package my.project.robocontrol;
 
 /**
- * 
- * @author Sharvari Nagesh
- * The LeftCommand is an implementation of command "LEFT".
- * It checks if the Robot is placed. If it is placed, then, it calls the Robot's function to turn it left.
+ * The LeftCommand is an implementation of commandInterface, RoboCommands. This class takes care of 
+ * calling the robot's method to turn "LEFT". This class checks if the Robot is placed properly before
+ * executing Robot's methods.
  *
+ * @author Sharvari Nagesh
+ * 
  */
 public class LeftCommand implements RoboCommands{
 private Robot robot;

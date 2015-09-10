@@ -1,14 +1,15 @@
 package my.project.robocontrol;
 
 /**
+
+ * ReportCommand class implements RoboCommands interface. This class is responsible for getting the 
+ * Robot's position and format the text before printing.
+ * ReportCommand takes care of handling REPORT invocation on uninitialized Robot or Robot which
+ * is not placed on the table properly.  In such cases, it prints the proper message for the user.
  * 
  * @author Sharvari Nagesh
- * ReportCommand class implements RoboCommands interface(execute() method). 
- * ReportCommand takes care of calling report method of the Robot.
- * It also handles calling the report function on null objects. 
- * calling report method without placing the Robot is also handled by this class
- *
  */
+
 public class ReportCommand implements RoboCommands {
 	Robot robot;
 	String report;

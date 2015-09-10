@@ -1,16 +1,15 @@
 package my.project.robocontrol;
 
-
-
 /**
  * 
- * @author Sharvari Nagesh
+ * Table is a singleton class. So it can be accessed from everywhere without instantiating. 
+ * Table has length and breadth, which can be set. By default, length and breadth will be
+ * set to 5.
+ *  
+ * Table provides methods to set it's size, get it's length and breadth and to check whether 
+ * a (X,Y) co-ordinate lies within the table.
  * 
- * Table is a singleton class. So it can be accessed from everywhere. Table has length and breadth, 
- * which can be set. By default, length and breadth will be set to 5.
- * Robot class refers to table class while moving, to check if the move is within the table.
- * Table provides methods to check whether the (X,Y) co-ordinate lies within the table.
- *
+ * @author Sharvari Nagesh
  */
 
 public class Table {
