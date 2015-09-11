@@ -10,5 +10,10 @@ deploy:
   password: Shalu123
   file: build/libs/RobotProject.jar
   skip_cleanup: true
+<<<<<<< HEAD
   on:
       tags: true
+=======
+   on:
+        tags: true
+>>>>>>> 807f75ab6c3acb833b0b98e0ecc2ff3028102a0c
