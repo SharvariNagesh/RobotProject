@@ -6,9 +6,9 @@ jdk:
 
 deploy:
   provider: releases
-  user:SharvariNagesh 
+  user:SharvariNagesh
   password: Shalu123
   file: build/libs/RobotProject.jar
   skip_cleanup: true
-   on:
-	tags: true
+  on:
+      tags: true
