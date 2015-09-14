@@ -1,6 +1,6 @@
 ABOUT THE ROBOT PROJECT:
   
-  This is a project to simulate a simple Robot. This document describes the project specifications, design, requirements and steps to compile and run the code.
+    This is a project to simulate a simple Robot. This document describes the project specifications, design, requirements and steps to compile and run the code.
 
 SPECIFICATIONS:
 
@@ -18,9 +18,9 @@ The commands Robot takes are as follows:
 
   PLACE x,y,direction : PLACE command is the first valid command for the Robot. (x,y) denotes the X&Y coordinate of the Table where Robot is placed. Program has to make sure that Robot is placed within the Table. The direction is the direction in which Robot is facing, which can be one of (NORTH,EAST,SOUTH,WEST). Before a valid PLACE command is executed, program does not allow execution of other commands like MOVE, LEFT, RIGHT on the Robot. A new PLACE command will make the Robot be placed in a new Position facing the direction provided in the new PLACE command. A PLACE command without a proper (x,y) coordinate value and direction will be ignored.
 
-   MOVE : MOVE command makes the Robot move one unit in the direction it is facing. Code has to make sure the move does not make the Robot fall off the table. For example, if Robot is placed in (3,3) coordinate facing NORTH, a move would result in moving the Robot north resulting in coordinates (3,4). Similarly, a move for a Robot facing EAST with (3,3) coordinates will take the Robot to (4,3) position.
+  MOVE : MOVE command makes the Robot move one unit in the direction it is facing. Code has to make sure the move does not make the Robot fall off the table. For example, if Robot is placed in (3,3) coordinate facing NORTH, a move would result in moving the Robot north resulting in coordinates (3,4). Similarly, a move for a Robot facing EAST with (3,3) coordinates will take the Robot to (4,3) position.
 
-   LEFT: Left command makes the Robot turn to its left. If Robot is facing NORTH, a left turn will make it face WEST.
+  LEFT: Left command makes the Robot turn to its left. If Robot is facing NORTH, a left turn will make it face WEST.
 
   RIGHT: Right command makes the Robot turn to its right. If Robot is facing NORTH, a right turn will make it face EAST.
 
@@ -30,18 +30,19 @@ The commands Robot takes are as follows:
 
 
 ENVIRONMENT TO COMPILE & RUN THE CODE
+
   The code is developed and tested on WINDOWS 7 machine with Oracle JDK 1.8.4. Because Java is portable, this code should theoretically compile and run on any platform. This code is known to be incompatible with versions lesser than Java 1.5.
 
   The code is successfully compiled and tested with oracle jdk7 and oracle jdk 8.
 
 
-   To Compile and run the code one needs to have a proper Java installed on their machine. JDK 8 and JRE 8 installation instructions can be found here : https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html
+  To Compile and run the code one needs to have a proper Java installed on their machine. JDK 8 and JRE 8 installation instructions can be found here : https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html
 
    To build the software using gradle, one has to have the latest gradle software installed on their machine. Gradle download and installation details can be found in this website: https://docs.gradle.org/current/userguide/installation.html.
 
    After the environment is set, one can build the application and run its unit test cases using below command from the Project root directory:
 
-   $gradle build
+     $gradle build
 
    An executable jar RobotProject.jar file will be created under:  RobotProject/build/libs/ folder.
 
@@ -49,7 +50,7 @@ ENVIRONMENT TO COMPILE & RUN THE CODE
 TO RUN THE PROGRAM:
    To run the jar file execute below command
 
-	$java -jar RobotProject.jar [file name]
+    $java -jar RobotProject.jar [file name]
 
    Here [file name] is an optional parameter to the executable. This file is a command file, which will have commands for the robot. It can have any number of PLACE,MOVE,LEFT,RIGHT,REPORT commands in it. Each command should be in a new line without any preceding blank spaces.
 
@@ -69,7 +70,8 @@ REPORT
   While executing the jar file, if file name is not passed, then the program will ask for inputs from the user from command line.
 
 example:
-$ java -jar RobotProject.jar
+        $ java -jar RobotProject.jar
+        
 Enter commands to control your ROBOT(enter EXIT to exit the code):
 
    A user can enter commands to control the robot. EXIT command is used to exit from the program when running in the command mode.
@@ -95,8 +97,6 @@ DESIGN DISCUSSION:
    The "Robot" class represents the robot of our simulation. The Robot has a position and a direction. Robot stores its position in the form of (x,y) coordinates. A class "Coordinates" is used to define (x,y) coordinates. Robot can be facing in one of NORTH/EAST/SOUTH/WEST directions. To store the Robot's direction an enum, "DIRECTIONS" is defined. Since an enum is used to store the directions, there are predefined set of directions supported by the code. Any invalid value will not be accepted into the enum variable.
 
   Enum DIRECTIONS also defines a method called moveInDirection(). If you pass a (x,y) coordinate to this function, depending on the direction, it knows which (x,y) value to increment/decrement to make the Robot move in that direction.
-
-
 
    By using an enum, the code is cleaner, readable, reduces error. Enhancing the Robot code to include more directions need changes only to the enum DIRECTIONS.
 
