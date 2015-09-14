@@ -1,12 +1,12 @@
 ABOUT THE ROBOT PROJECT:
-
-    	This is a project to simulate a simple Robot. This document describes the project specifications, design, requirements and steps to compile and run the code.
+  
+  This is a project to simulate a simple Robot. This document describes the project specifications, design, requirements and steps to compile and run the code.
 
 SPECIFICATIONS:
 
    The code controls a simulated Robot. The Robot has to be placed on a table on which Robot will move around. Default size of the table is 5 x 5 units. The position on table is denoted by (x,y) coordinates. For example, (0,0) is the south west corner and (5,5) is the northeastern corner of the table. Code assumes that there is no other obstruction on the table and after placing, Robot can move, turn right or left on the table.
 
-    Robot takes commands from the user either in a file passed as an argument or from the command line. If no file is passed as an argument, commands will be taken from command line. Commands can be given to the Robot in any order and Robot will move/turn/report accordingly. Any invalid command or commands before a PLACE command or commands resulting in Robot moving out of the table will be ignored.
+   Robot takes commands from the user either in a file passed as an argument or from the command line. If no file is passed as an argument, commands will be taken from command line. Commands can be given to the Robot in any order and Robot will move/turn/report accordingly. Any invalid command or commands before a PLACE command or commands resulting in Robot moving out of the table will be ignored.
 
 The commands Robot takes are as follows:
 
@@ -30,8 +30,7 @@ The commands Robot takes are as follows:
 
 
 ENVIRONMENT TO COMPILE & RUN THE CODE
-
-     The code is developed and tested on WINDOWS 7 machine with Oracle JDK 1.8.4. Because Java is portable, this code should theoretically compile and run on any platform. This code is known to be incompatible with versions lesser than Java 1.5.
+  The code is developed and tested on WINDOWS 7 machine with Oracle JDK 1.8.4. Because Java is portable, this code should theoretically compile and run on any platform. This code is known to be incompatible with versions lesser than Java 1.5.
 
   The code is successfully compiled and tested with oracle jdk7 and oracle jdk 8.
 
@@ -66,8 +65,8 @@ REPORT
 
 
    Any invalid command or commands which result in robot moving out of the table will be ignored. Commands can be typed either in capital letters or lowercase letters. PLACE command needs X&Y coordinates and the direction in which Robot is facing. X&Y should be two integers from 0-5 and direction can be one of (North, East, South, West). X & Y coordinates and direction should be separated by a comma.
-
-    While executing the jar file, if file name is not passed, then the program will ask for inputs from the user from command line.
+ 
+  While executing the jar file, if file name is not passed, then the program will ask for inputs from the user from command line.
 
 example:
 $ java -jar RobotProject.jar
