@@ -1,6 +1,7 @@
 ABOUT THE ROBOT PROJECT:
-  
-    This is a project to simulate a simple Robot. This document describes the project specifications, design, requirements and steps to compile and run the code.
+
+
+  This is a project to simulate a simple Robot. This document describes the project specifications, design, requirements and steps to compile and run the code.
 
 SPECIFICATIONS:
 
