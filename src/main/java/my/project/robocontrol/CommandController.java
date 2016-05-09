@@ -1,7 +1,7 @@
 package my.project.robocontrol;
 
 /**
- * This is the class which will read commands from a command file and create appropriate instances of 
+ * This is the class which reads commands from a command file and create appropriate instances of 
  * command classes to execute the commands. If the file name is not passed or if null is passed as the 
  * file name for this class constructor, it reads the commands from input Stream. When user is entering 
  * Robot commands from console, user can use "EXIT" command to exit from the program.
@@ -72,6 +72,7 @@ private String output;
 		   } 
 		   
 		   String commandLine = inputScanner.nextLine().toUpperCase();
+		   
 		   String command = commandLine.split("[ ]+")[0];
 		   commandFound = true;
 		   switch(command)
