@@ -38,5 +38,19 @@ public class CommandFactoryTest {
 		assertTrue( rc instanceof MoveCommand);
 		
 	}
+	
+	@Test
+	public void testForCommandFactoryImplementationWhenWrongCommandIsPassed() {
+		CommandFactory cmdFactory = CommandFactory.getInstance();
+		RoboCommands rc = cmdFactory.getCommand(robot, "MVE");
+		assertNull(rc);
+	}
 
+	@Test
+	public void testForCommandFactoryImplementationForExitCommand() {
+		CommandFactory cmdFactory = CommandFactory.getInstance();
+		RoboCommands rc = cmdFactory.getCommand(robot, "EXIT");
+		assertNotNull(rc);
+		
+	}
 }
