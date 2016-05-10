@@ -11,7 +11,12 @@ package my.project.robocontrol;
 public class LeftCommand implements RoboCommands{
 private Robot robot;
 
-    public LeftCommand(Robot robot, String placeCommand)
+static
+{
+	Robot tempRobot = null;
+	CommandFactory.getInstance().registerCommand("LEFT", new LeftCommand(tempRobot, ""));
+}
+    public LeftCommand(Robot robot, String commandLine)
     {
     	this.robot = robot;
     }
@@ -22,5 +27,10 @@ private Robot robot;
 			robot.turnLeft();
 		}
 		return null;
+	}
+	
+	public LeftCommand createCommandObject(Robot robot, String commandLine)
+	{
+		return new LeftCommand(robot, commandLine);
 	}
 }

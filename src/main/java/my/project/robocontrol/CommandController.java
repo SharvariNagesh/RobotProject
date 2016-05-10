@@ -58,14 +58,12 @@ private String output;
    public RoboCommands getNextCommand()
    {
 	   RoboCommands roboCommand=null;
-	   boolean commandFound = false;
-	 
 	   if(inputScanner == null)
 	   {
 		   return null;
 	   }
 	   
-	   while(!commandFound)
+	   while(null == roboCommand)
 	   {
 		   if (!inputScanner.hasNextLine()){
 			   return null;
@@ -73,36 +71,9 @@ private String output;
 		   
 		   String commandLine = inputScanner.nextLine().toUpperCase();
 		   
-		   String command = commandLine.split("[ ]+")[0];
-		   commandFound = true;
-		   switch(command)
-		   {
-		   case "PLACE":
-			   roboCommand = new PlaceCommand(robot,commandLine);
-			   break;
-			   
-		   case "MOVE":
-			   roboCommand = new MoveCommand(robot,commandLine);
-			   break;
-		   case "LEFT":
-			   roboCommand = new LeftCommand(robot,commandLine);
-			   break;
-		   case "RIGHT" :
-			   roboCommand = new RightCommand(robot,commandLine);
-			   break;
-		   case "REPORT" :
-			   roboCommand = new ReportCommand(robot,commandLine);
-			   break;
-		   case "EXIT" :
-			   //This case is used to exit the code when user is inputing from the command line.
-			   break;
-			   //If any other invalid command is passed then, next line is read from the command file
-		   default:
-			   commandFound = false;
-			   break;
+		   roboCommand = CommandFactory.getInstance().getCommand(robot,commandLine);
 		   
-		   }
-   }
+       }
 	   return roboCommand;
    }
 }

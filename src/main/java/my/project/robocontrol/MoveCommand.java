@@ -16,11 +16,17 @@ public class MoveCommand implements RoboCommands {
 	private String command;
 	private Coordinates newXYCoordinates;
 	private DIRECTIONS robotDirection;
+	static
+	{
+		Robot tempRobot = null;
+		CommandFactory.getInstance().registerCommand("MOVE", new MoveCommand(tempRobot, ""));
+	}
   public MoveCommand(Robot robot, String command)
   {
 	this.robot = robot;
 	this.command = command;
   }
+  
   public String execute()
   {
 	  if(robot!= null && robot.isRobotPlaced())
@@ -35,4 +41,9 @@ public class MoveCommand implements RoboCommands {
 	  }
 	return null;
   }
+  
+  public MoveCommand createCommandObject(Robot robot, String commandLine)
+	{
+		return new MoveCommand(robot, commandLine);
+	}
 }

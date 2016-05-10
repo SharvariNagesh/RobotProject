@@ -13,10 +13,23 @@ package my.project.robocontrol;
 public class ReportCommand implements RoboCommands {
 	Robot robot;
 	String report;
+	
+	static
+	{
+		Robot tempRobot = null;
+		CommandFactory.getInstance().registerCommand("REPORT", new ReportCommand(tempRobot, ""));
+	}
+	
 	public ReportCommand(Robot robot, String command)
 	{
 		this.robot = robot;
 	}
+	
+	public ReportCommand createCommandObject(Robot robot, String commandLine)
+	{
+		return new ReportCommand(robot, commandLine);
+	}
+	
 	public String execute()
 	{
 		if(robot != null){

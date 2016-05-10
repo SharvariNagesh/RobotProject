@@ -17,9 +17,21 @@ package my.project.robocontrol;
 public class PlaceCommand implements RoboCommands {
 	private Robot robot;
 	private String command ;
+	
+	static
+	{
+		Robot tempRobot = null;
+		CommandFactory.getInstance().registerCommand("PLACE", new PlaceCommand(tempRobot, ""));
+	}
+	
 	public PlaceCommand(Robot robot, String command){
 		this.robot = robot;
 		this.command = command;
+	}
+	
+	public PlaceCommand createCommandObject(Robot robot, String commandLine)
+	{
+		return new PlaceCommand(robot, commandLine);
 	}
 	
 	//This is the execute command implementation. 

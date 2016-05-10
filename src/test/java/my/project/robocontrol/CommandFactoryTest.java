@@ -33,7 +33,7 @@ public class CommandFactoryTest {
 	@Test
 	public void testForCommandFactoryImplementation() {
 		CommandFactory cmdFactory = CommandFactory.getInstance();
-		RoboCommands rc = cmdFactory.getCommand("MOVE");
+		RoboCommands rc = cmdFactory.getCommand(robot, "MOVE");
 		assertNotNull(rc);
 		assertTrue( rc instanceof MoveCommand);
 		
