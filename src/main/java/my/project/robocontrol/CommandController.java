@@ -45,11 +45,12 @@ private String output;
 	   while(true)
 	   {
 		   roboCommand = getNextCommand();
-		   if (roboCommand != null)
+		   if (null == roboCommand || roboCommand instanceof ExitCommand  )
 		   {
-			   output = roboCommand.execute();
-		   }else{
 			   return output;
+		   }else{
+			   output = roboCommand.execute();
+			   
 		   }
 	   }
 	 
@@ -60,7 +61,7 @@ private String output;
 	   RoboCommands roboCommand=null;
 	   if(inputScanner == null)
 	   {
-		   return null;
+		   return (new ExitCommand(robot, ""));
 	   }
 	   
 	   while(null == roboCommand)

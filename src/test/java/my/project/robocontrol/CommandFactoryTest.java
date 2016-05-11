@@ -7,10 +7,12 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.Rule;
 
 public class CommandFactoryTest {
 
 	private Robot robot;
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -53,4 +55,7 @@ public class CommandFactoryTest {
 		assertNotNull(rc);
 		
 	}
+	
+	
+	
 }

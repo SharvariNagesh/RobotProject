@@ -15,6 +15,7 @@ public class CommandFactory {
 		if (cmdFactory == null)
 		{
 			cmdFactory = new CommandFactory();
+			
 			registerCommands();
 		}
 		return cmdFactory;
@@ -23,16 +24,17 @@ public class CommandFactory {
 	public static void registerCommands()
 	{
 		try
-	
 		{
 			Class.forName("my.project.robocontrol.MoveCommand");
 			Class.forName("my.project.robocontrol.LeftCommand");
 			Class.forName("my.project.robocontrol.RightCommand");
 			Class.forName("my.project.robocontrol.ReportCommand");
 			Class.forName("my.project.robocontrol.PlaceCommand");
+			Class.forName("my.project.robocontrol.ExitCommand");
 		}
 		catch (ClassNotFoundException any)
 		{
+			System.out.println("Command not found :");
 			any.printStackTrace();
 		}
 	}
@@ -44,7 +46,14 @@ public class CommandFactory {
 	public RoboCommands getCommand(Robot robot, String commandLine)
 	{
 		String command = commandLine.split("[ ]+")[0];
-		return ((RoboCommands)commandList.get(command)).createCommandObject(robot, commandLine);
+		
+		 RoboCommands rbc = ((RoboCommands)commandList.get(command));
+		 if(rbc != null)
+		 {
+			 return (rbc.createCommandObject(robot, commandLine));
+		 }
+		 
+		 return null;
 	}
 	
 }
